@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Underground Marketplace - Secure Trading Platform">
+    <title>Silk Road - Underground Marketplace</title>
+
+    <!-- MDBootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Security Warning Banner -->
+    <div class="security-banner">
+        <i class="fas fa-shield-alt"></i> You are accessing this site through a secure connection. IP: <span
+            id="fake-ip">127.0.0.1</span> | Node: <span id="node">onion3xc7vr2k.onion</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-mask"></i> SILK ROAD
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-comments"></i> Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logout" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <h5 class="sidebar-title">CATEGORIES</h5>
+                <ul class="category-list">
+                    <li><a href="#" class="category-link active" data-category="all"><i class="fas fa-th"></i> All
+                            Items</a></li>
+                    <li><a href="#" class="category-link" data-category="anime"><i class="fas fa-star"></i> Anime
+                            Figures</a></li>
+                    <li><a href="#" class="category-link" data-category="fumo"><i class="fas fa-ghost"></i> Fumo
+                            Collection</a></li>
+                    <li><a href="#" class="category-link" data-category="rare"><i class="fas fa-gem"></i> Rare Items</a>
+                    </li>
+                    <li><a href="#" class="category-link" data-category="limited"><i class="fas fa-fire"></i> Limited
+                            Edition</a></li>
+                </ul>
+
+                <h5 class="sidebar-title mt-4">TRUSTED SELLERS</h5>
+                <ul class="seller-list">
+                    <li><a href="seller.html?id=1"><i class="fas fa-shield-alt text-success"></i> FumoDealer_69</a></li>
+                    <li><a href="seller.html?id=2"><i class="fas fa-shield-alt text-success"></i> AnimeLord420</a></li>
+                    <li><a href="seller.html?id=3"><i class="fas fa-shield-alt text-warning"></i> TokyoSupply</a></li>
+                    <li><a href="seller.html?id=4"><i class="fas fa-shield-alt text-success"></i> NipponWares</a></li>
+                    <li><a href="seller.html?id=5"><i class="fas fa-shield-alt text-success"></i> Kyoshau</a></li>
+                </ul>
+
+                <div class="sidebar-info mt-4">
+                    <h6>MARKETPLACE STATS</h6>
+                    <p>Active Listings: <span class="stat-value">247</span></p>
+                    <p>Registered Sellers: <span class="stat-value">89</span></p>
+                    <p>Completed Trades: <span class="stat-value">1,523</span></p>
+                    <p>Uptime: <span class="stat-value">99.7%</span></p>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 main-content">
+
+                <!-- Search Bar -->
+                <div class="search-section">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search items, sellers, or categories...">
+                        <button class="btn btn-search">SEARCH</button>
+                    </div>
+                    <div class="sort-options">
+                        <label>Sort by:</label>
+                        <select class="form-select" id="sortSelect">
+                            <option value="newest">Newest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Marketplace Header -->
+                <div class="marketplace-header">
+                    <h4><i class="fas fa-box-open"></i> AVAILABLE LISTINGS</h4>
+                    <p class="text-muted">All transactions are secured with escrow protection</p>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-grid" id="productGrid">
+
+                    <!-- Product Card 1 -->
+                    <div class="product-card" data-category="fumo">
+                        <div class="product-badge rare">RARE</div>
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-ghost"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Reimu Hakurei Fumo</h6>
+                            <p class="product-description">Original Touhou Project plushie, mint condition</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> FumoDealer_69</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.9 (156)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">2.5 BTC</span>
+                                <a href="product.html?id=1" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card" data-category="anime">
+                        <div class="product-badge limited">LIMITED</div>
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-female"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Hatsune Miku Racing Ver.</h6>
+                            <p class="product-description">1/8 Scale Figure, Limited Edition 2024</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> AnimeLord420</span>
+                                <span class="rating"><i class="fas fa-star"></i> 5.0 (89)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">1.8 BTC</span>
+                                <a href="product.html?id=2" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card" data-category="fumo">
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-ghost"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Cirno Fumo Bundle</h6>
+                            <p class="product-description">Set of 3 Cirno plushies, never opened</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> FumoDealer_69</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.9 (156)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">4.2 BTC</span>
+                                <a href="product.html?id=3" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-card" data-category="anime">
+                        <div class="product-badge hot">HOT</div>
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Zero Two Figure</h6>
+                            <p class="product-description">Premium quality 1/7 scale, authentic</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> TokyoSupply</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.7 (234)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">2.1 BTC</span>
+                                <a href="product.html?id=4" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="product-card" data-category="rare">
+                        <div class="product-badge rare">RARE</div>
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Asuka Langley Vintage</h6>
+                            <p class="product-description">1997 Original NGE collectible, sealed</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> NipponWares</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.8 (67)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">5.5 BTC</span>
+                                <a href="product.html?id=5" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="product-card" data-category="fumo">
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-ghost"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Marisa Kirisame Fumo</h6>
+                            <p class="product-description">Perfect condition, with original tags</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> FumoDealer_69</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.9 (156)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">2.3 BTC</span>
+                                <a href="product.html?id=6" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 7 -->
+                    <div class="product-card" data-category="anime">
+                        <div class="product-badge limited">LIMITED</div>
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-female"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Rem Crystal Dress Ver.</h6>
+                            <p class="product-description">Limited run of 500, certificate included</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> AnimeLord420</span>
+                                <span class="rating"><i class="fas fa-star"></i> 5.0 (89)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">3.8 BTC</span>
+                                <a href="product.html?id=7" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 8 -->
+                    <div class="product-card" data-category="limited">
+                        <div class="product-badge hot">HOT</div>
+                        <div class="product-image-container">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-title">Saber Alter Deluxe</h6>
+                            <p class="product-description">1/4 Scale massive figure with LED effects</p>
+                            <div class="product-meta">
+                                <span class="seller"><i class="fas fa-user"></i> TokyoSupply</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.7 (234)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="price">6.9 BTC</span>
+                                <a href="product.html?id=8" class="btn btn-view">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>ABOUT</h6>
+                    <p>Secure underground marketplace for rare collectibles. All transactions protected by escrow.</p>
+                </div>
+                <div class="col-md-4">
+                    <h6>SUPPORT</h6>
+                    <p><i class="fas fa-envelope"></i> support@onion.local</p>
+                    <p><i class="fas fa-key"></i> PGP Key Available</p>
+                </div>
+                <div class="col-md-4">
+                    <h6>SECURITY</h6>
+                    <p><i class="fas fa-lock"></i> SSL/TOR Encrypted</p>
+                    <p><i class="fas fa-shield-alt"></i> 2FA Enabled</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>⚠️ This marketplace operates on the principle of anonymity and security. Stay safe.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MDBootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

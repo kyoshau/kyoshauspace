@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T A S V İ R L E R</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+        body {
+            background-color: #000;
+            color: #8b0000;
+            font-family: 'Cinzel', serif;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 10px #500;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .frame {
+            border: 1px solid #300;
+            padding: 10px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1s;
+            transition: all 0.3s;
+            position: relative;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #050000;
+            overflow: hidden;
+        }
+
+        .frame:hover {
+            border-color: #800;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* Abstract Art using CSS */
+        .art-void {
+            width: 50px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+            box-shadow: 0 0 20px 10px #200;
+        }
+
+        .art-line {
+            width: 100px;
+            height: 2px;
+            background: #500;
+            transform: rotate(45deg);
+            box-shadow: 0 0 5px #f00;
+        }
+
+        .art-sq {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #500;
+            transform: rotate(45deg);
+            animation: spin-slow 10s infinite linear;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 5px;
+            font-size: 0.7rem;
+            color: #555;
+            width: 100%;
+            text-align: center;
+        }
+
+        .back-link {
+            margin-top: 5rem;
+            color: #444;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 10px 30px;
+            transition: all 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2s;
+        }
+
+        .back-link:hover {
+            background: #111;
+            color: #800;
+            border-color: #500;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(45deg);
+            }
+
+            to {
+                transform: rotate(405deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MELANKOLİK TASVİRLER</h1>
+
+    <div class="gallery">
+        <div class="frame">
+            <div class="art-void"></div>
+            <div class="caption">HİÇLİK</div>
+        </div>
+        <div class="frame">
+            <div class="art-line"></div>
+            <div class="caption">KIRILMA</div>
+        </div>
+        <div class="frame">
+            <div class="art-sq"></div>
+            <div class="caption">DÖNGÜ</div>
+        </div>
+        <div class="frame">
+            <div style="font-size: 3rem; color: #300;">?</div>
+            <div class="caption">BİLİNMEYEN</div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">GERİ DÖN</a>
+</body>
+
+</html>

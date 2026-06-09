@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R İ S A L E</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+        body {
+            background-color: #050000;
+            color: #8b0000;
+            font-family: 'Cinzel', serif;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid #300;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 10px #500;
+        }
+
+        .verse {
+            margin-bottom: 4rem;
+            font-style: italic;
+            transition: transform 0.3s;
+        }
+
+        .verse:hover {
+            transform: scale(1.05);
+            color: #a00;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #777;
+        }
+
+        .highlight {
+            color: #c00;
+            font-weight: bold;
+        }
+
+        .back-link {
+            margin-top: 5rem;
+            color: #444;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 10px 30px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: #111;
+            color: #800;
+            border-color: #500;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GÖLGE HARAMİLERİ RİSALESİ</h1>
+
+        <div class="verse">
+            <p>"Karanlık aydınlığa kavuşur elbet, ama önce yanmak gerek."</p>
+            <p>Bir pesimistin gözyaşları, okyanusları dolduracak kadar derin.</p>
+        </div>
+
+        <div class="verse">
+            <p>Hayat, <span class="highlight">24</span> saatlik bir ömür biçilmiş kelebeğin kanat çırpışı kadar kısa.
+            </p>
+            <p>Ve biz, o kelebeğin rüyasında yaşayan hayaletleriz.</p>
+        </div>
+
+        <div class="verse">
+            <p>Sözlerimi geri alamam, yazdığımı yeniden yazamam.</p>
+            <p>Kaderin mürekkebi kurumuş, sayfa çevrilmiş.</p>
+            <p>Burada, sadece yankılar var.</p>
+        </div>
+
+        <div class="verse">
+            <p>Ahmak ıslatan yağmurlar altında...</p>
+            <p>Maskeli baloların sahte yüzleri...</p>
+            <p>Hepsi birer <span class="highlight">illüzyon</span>.</p>
+        </div>
+
+        <a href="index.html" class="back-link">GERİ DÖN</a>
+    </div>
+</body>
+
+</html>

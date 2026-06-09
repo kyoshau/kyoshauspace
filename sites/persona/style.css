@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+}
+
+/* Screens */
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+/* Initial Screen */
+#initial-screen {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+}
+
+#initial-screen h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 24px;
+    font-style: italic;
+    color: #FFD700;
+    margin-bottom: 60px;
+    opacity: 0.9;
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    animation: glitch-main 3s infinite;
+}
+
+@keyframes glitch-main {
+
+    0%,
+    100% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    10% {
+        text-shadow: 2px 2px 0 #00f, -2px -2px 0 #f00;
+    }
+
+    20% {
+        text-shadow: -2px -2px 0 #00f, 2px 2px 0 #f00;
+    }
+
+    30% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+}
+
+/* Buttons */
+.big-button {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    padding: 30px 80px;
+    background: transparent;
+    border: 4px solid #FFD700;
+    color: #FFD700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    letter-spacing: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.big-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #FFD700;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.big-button:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.big-button:hover {
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+.small-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    padding: 15px 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+.small-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Particles Background */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particles::before,
+.particles::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: float 8s infinite ease-in-out;
+}
+
+.particles::before {
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    top: 10%;
+    left: 20%;
+}
+
+.particles::after {
+    background: radial-gradient(circle, rgba(0, 102, 204, 0.1) 0%, transparent 70%);
+    bottom: 10%;
+    right: 20%;
+    animation-delay: -4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-50px) scale(1.1);
+    }
+}
+
+/* Result Screen */
+#result-screen {
+    background: #000;
+}
+
+.arcana-card {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto 40px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0066CC 100%);
+    border: 5px solid #FFD700;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+    animation: cardReveal 1s ease-out;
+}
+
+@keyframes cardReveal {
+    0% {
+        transform: rotateY(180deg) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.card-number {
+    font-family: 'Cinzel', serif;
+    font-size: 120px;
+    font-weight: 700;
+    opacity: 0.3;
+    position: absolute;
+    top: 20px;
+}
+
+.card-name {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.card-symbol {
+    font-size: 180px;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+}
+
+.arcana-description {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.arcana-description h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.arcana-description p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.traits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.trait {
+    background: rgba(255, 215, 0, 0.2);
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    animation: traitAppear 0.5s ease-out backwards;
+}
+
+@keyframes traitAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Transition Effects */
+.screen-transition {
+    animation: screenFade 2s ease-in-out;
+}
+
+@keyframes screenFade {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #initial-screen h1 {
+        font-size: 48px;
+        letter-spacing: 4px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .big-button {
+        font-size: 24px;
+        padding: 20px 50px;
+    }
+
+    .arcana-card {
+        width: 300px;
+        height: 450px;
+    }
+
+    .card-number {
+        font-size: 80px;
+    }
+
+    .card-name {
+        font-size: 32px;
+    }
+
+    .card-symbol {
+        font-size: 120px;
+    }
+
+    .arcana-description h2 {
+        font-size: 28px;
+    }
+
+    .arcana-description p {
+        font-size: 16px;
+    }
+}

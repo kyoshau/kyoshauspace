@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>user@kyo:~</title>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg">
+</head>
+
+<body class="bg-black text-white vh-100 vw-100 overflow-hidden m-0 p-0 font-monospace selection-primary">
+
+  <!-- Star Background Canvas -->
+  <canvas id="star-canvas" class="position-fixed top-0 start-0 w-100 h-100 z-0 pe-none"></canvas>
+
+  <!-- Matrix Rain Canvas (Hidden by default) -->
+  <canvas id="matrix-canvas" class="position-fixed top-0 start-0 w-100 h-100 z-50 pe-none d-none"></canvas>
+
+  <!-- CRT Effect Overlay -->
+  <div class="crt-overlay"></div>
+
+  <div class="position-relative z-10 w-100 h-100 container-fluid p-0">
+    <div class="row h-100 m-0">
+
+      <!-- Anime Girl Section (Left) -->
+      <div class="col-md-6 h-100 d-none d-md-flex align-items-end justify-content-center pe-none">
+        <img src="./img/girl.png" alt="Anime Character" class="vh-100 object-contain object-bottom drop-shadow-glow">
+      </div>
+
+      <!-- Terminal Section (Right) -->
+      <div class="col-md-6 h-100 d-flex align-items-center justify-content-center p-4">
+        <div id="terminal-window"
+          class="bg-glass border border-light border-opacity-25 rounded-5 overflow-hidden shadow-5-strong backdrop-blur-sm transition-all duration-300">
+
+          <!-- Terminal Header -->
+          <div id="terminal-header"
+            class="bg-glass-header px-4 py-2 d-flex align-items-center justify-content-between border-bottom border-light border-opacity-10 user-select-none">
+            <div class="d-flex align-items-center gap-2 text-white">
+              <i class="fas fa-terminal fa-sm text-info opacity-75"></i>
+            </div>
+            <div class="text-white text-center flex-grow-1 font-monospace small text-muted opacity-75">~ - fish</div>
+            <div class="d-flex gap-2">
+              <div class="window-dot bg-warning opacity-50 hover-opacity-100 cursor-pointer"></div>
+              <div class="window-dot bg-success opacity-50 hover-opacity-100 cursor-pointer"></div>
+              <div class="window-dot bg-danger opacity-50 hover-opacity-100 cursor-pointer"></div>
+            </div>
+          </div>
+
+          <!-- Terminal Body -->
+          <div id="terminal-body"
+            class="p-4 overflow-y-auto text-light custom-scrollbar font-monospace bg-black-opacity"
+            style="height: 500px;">
+            <!-- Content will be injected by JS -->
+            <div id="output"></div>
+
+            <div class="d-flex align-items-center gap-2 mt-2">
+              <span class="text-success fw-bold">&gt;</span>
+              <input id="command-input" type="text"
+                class="bg-transparent border-0 outline-none text-white w-100 p-0 shadow-none font-monospace" autofocus
+                autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

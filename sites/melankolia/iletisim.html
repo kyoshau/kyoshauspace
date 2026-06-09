@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İ L E T İ Ş İ M</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+        body {
+            background-color: #050000;
+            color: #8b0000;
+            font-family: 'Cinzel', serif;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            border: 1px solid #300;
+            padding: 3rem;
+            background: rgba(10, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(50, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-shadow: 0 0 10px #500;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-bottom: 2px solid #333;
+            color: #a00;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            outline: none;
+            transition: border-color 0.3s;
+            resize: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-bottom-color: #800;
+        }
+
+        input:focus+label,
+        textarea:focus+label,
+        input:not(:placeholder-shown)+label,
+        textarea:not(:placeholder-shown)+label {
+            color: #800;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid #500;
+            color: #800;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #200;
+            color: #f00;
+            box-shadow: 0 0 15px #500;
+        }
+
+        .message-sent {
+            display: none;
+            text-align: center;
+            margin-top: 2rem;
+            color: #f00;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 3rem;
+            color: #444;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #800;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Karanlığa Fısılda</h1>
+
+        <form id="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" required placeholder=" ">
+                <label for="name">RUMUZ / KOD ADI</label>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" required placeholder=" ">
+                <label for="email">E-POSTA (İsteğe Bağlı)</label>
+            </div>
+
+            <div class="form-group">
+                <textarea id="message" rows="4" required placeholder=" "></textarea>
+                <label for="message">İTİRAFLARINIZ</label>
+            </div>
+
+            <button type="submit">GÖNDER</button>
+        </form>
+
+        <div id="sent-message" class="message-sent">
+            <p>"Sözlerin boşluğa bırakıldı..."</p>
+            <p>Dinliyoruz.</p>
+        </div>
+
+        <a href="index.html" class="back-link">GERİ DÖN</a>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Visual feedback only
+            this.style.opacity = '0';
+            this.style.pointerEvents = 'none';
+
+            const sentMsg = document.getElementById('sent-message');
+            sentMsg.style.display = 'block';
+            sentMsg.style.animation = 'fadeIn 2s forwards';
+        });
+    </script>
+
+</body>
+
+</html>

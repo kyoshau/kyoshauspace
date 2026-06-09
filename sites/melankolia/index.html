@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M E L A N K O L I A</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+        body {
+            background-color: #000;
+            color: #8b0000;
+            font-family: 'Cinzel', serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        .container {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 1rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px #ff0000;
+            animation: pulse 4s infinite;
+        }
+
+        p {
+            font-size: 1.2rem;
+            letter-spacing: 0.2rem;
+            line-height: 2;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .symbol {
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            animation: spin 20s linear infinite;
+            color: #333;
+        }
+
+        .ritual-text {
+            color: #4a0000;
+            font-size: 0.8rem;
+            margin-top: 5rem;
+            opacity: 0.5;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.5;
+                text-shadow: 0 0 5px #8b0000;
+            }
+
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 20px #ff0000;
+            }
+
+            100% {
+                opacity: 0.5;
+                text-shadow: 0 0 5px #8b0000;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden-link {
+            position: absolute;
+            bottom: 20px;
+            color: #111;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .hidden-link:hover {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="symbol">۞</div>
+        <h1>KUVVETMIRA</h1>
+
+        <p>Karamsar şairlerin mısralarında saklı gerçekler.</p>
+        <p>Gölge haramileri şehre indi.</p>
+        <p>Bir pesimistin gözyaşları...</p>
+
+        <div class="ritual-text">
+            "Düşersem yanarım, yanarsam sönebilir miyim?"
+        </div>
+
+        <nav class="nav-menu">
+            <a href="risale.html">RİSALE</a>
+            <span class="separator">|</span>
+            <a href="tasvirler.html">TASVİRLER</a>
+            <span class="separator">|</span>
+            <a href="iletisim.html">İLETİŞİM</a>
+            <span class="separator">|</span>
+            <a href="../../index.html">SİMÜLASYONDAN ÇIK</a>
+        </nav>
+    </div>
+
+    <style>
+        .nav-menu {
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeIn 5s forwards 1s;
+        }
+
+        .nav-menu a {
+            color: #8b0000;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s, text-shadow 0.3s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav-menu a:hover {
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            border-bottom: 1px solid #ff0000;
+        }
+
+        .separator {
+            color: #333;
+        }
+    </style>
+
+    <script>
+        // Eerie background sound simulation (visual only for now)
+        document.body.addEventListener('click', () => {
+            document.body.style.backgroundColor = '#050000';
+            setTimeout(() => {
+                document.body.style.backgroundColor = '#000';
+            }, 50);
+        });
+    </script>
+</body>
+
+</html>

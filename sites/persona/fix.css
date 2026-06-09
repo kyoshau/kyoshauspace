@@ -1,0 +1,31 @@
+/* Fix for scrollable result screen */
+.screen {
+    overflow-y: auto !important;
+}
+
+#result-screen .content {
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 3D Card Image Flip Effect - Only image rotates, not container */
+.arcana-card .card-symbol {
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    transform-style: preserve-3d !important;
+    will-change: transform;
+}
+
+.arcana-card:hover .card-symbol {
+    transform: rotateY(15deg) rotateX(-10deg) scale(1.1) !important;
+}
+
+.arcana-card:hover .card-symbol img {
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 1)) !important;
+}
+
+.arcana-card:active .card-symbol {
+    transform: rotateY(0deg) rotateX(0deg) scale(0.95) !important;
+}
